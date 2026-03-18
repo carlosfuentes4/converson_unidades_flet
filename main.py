@@ -123,7 +123,7 @@ class Conversor:
                     self.switch_button,
                     self.unidades_2,
                 ],alignment=ft.MainAxisAlignment.CENTER),
-                ft.Container(height=35),
+                ft.Container(height=28),
                 ft.Container(
                     content=self.convert_button,
                     alignment=ft.alignment.center
@@ -180,7 +180,7 @@ class Conversor:
                 self.show_message(f"error: {e}")
 
     def switch(self,_):
-        # val1=self.textfield_1.value
+        # val1=self.textfield_1.value 
         val2=self.textfield_2.value
         unidad1=self.unidades_1.value
         unidad2=self.unidades_2.value
