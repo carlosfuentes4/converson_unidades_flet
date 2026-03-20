@@ -105,6 +105,16 @@ class Conversor:
             bgcolor=ft.colors.AMBER_700,
             
         )
+
+        self.clean_button=ft.IconButton(
+            content=ft.Icon(ft.icons.CLEAR_OUTLINED),
+            width=54,
+            height=54,
+            icon_color=ft.colors.AMBER_900,
+            on_click=self.clear,
+            alignment=ft.alignment.center,
+            icon_size=30
+        )
         #prueba
        
     def _build_ui(self):
@@ -125,7 +135,8 @@ class Conversor:
                 ],alignment=ft.MainAxisAlignment.CENTER),
                 ft.Container(height=28),
                 ft.Container(
-                    content=self.convert_button,
+                    content=ft.Row([self.convert_button,self.clean_button],
+                                   alignment=ft.MainAxisAlignment.CENTER),
                     alignment=ft.alignment.center
                 )
             ],
@@ -197,6 +208,11 @@ class Conversor:
                 self.convertir(_=_)
             except Exception as e:
                 print(f"error: {e}")
+
+    def clear(self,_):
+        self.textfield_1.value=""
+        self.textfield_2.value=""
+        self.page.update()
         
 
 
